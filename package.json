@@ -1,0 +1,19 @@
+{
+  "name": "grunt-generate-translations",
+  "version": "0.0.1",
+  "description": "...",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/mys92/grunt-generate-translations.git"
+  },
+  "author": "STER Project",
+  "bugs": {
+    "url": "https://bitbucket.org/mys92/grunt-generate-translations/issues"
+  },
+  "homepage": "http://kamilkisiela.pl",
+  "contributors": [
+    "Kamil Kisiela <kamil.kisiela@ster-project.com>"
+  ],
+  "devDependencies": {}
+}
