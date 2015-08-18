@@ -70,8 +70,10 @@ grunt.initConfig({
 You have now two groups of files. First group is for articles, second for domains.  
 Each group has translations files. If you defined _pl_ at least once there will be file with polish translations created.  
 Look at this pattern:  
+
 ```
 path/to/save/translations/{domain}-{lang}.json
+```
 
 ### Source files
 This task works only with translations of a single namespace. _I will work on it later_  
