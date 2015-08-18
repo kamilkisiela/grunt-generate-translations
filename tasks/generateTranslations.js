@@ -43,10 +43,7 @@ module.exports = function(grunt) {
                         if(!result[lang]) {
                             result[lang] = {};
                         }
-                        if(!result[lang][self.domain]) {
-                            result[lang][self.domain] = {};
-                        }
-                        result[lang][self.domain][key] = content[key][lang];
+                        result[lang][key] = content[key][lang];
                     }
                 }
                 return result;

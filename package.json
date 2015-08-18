@@ -1,6 +1,6 @@
 {
   "name": "grunt-generate-translations",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generates source files for https://github.com/angular-translate/angular-translate",
   "private": false,
   "repository": {
