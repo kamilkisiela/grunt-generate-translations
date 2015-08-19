@@ -27,7 +27,8 @@ grunt.initConfig({
   generateTranslation: {
     options: {
       {
-        path: '...'
+        path: '...',
+        langs: [...]
       }
     },
     your_domain: {
@@ -43,10 +44,15 @@ grunt.initConfig({
 Type: `String`
 Default value: `''`
 
-The path to use when saving files. 
+The path to use when saving files.
+ 
+#### options.langs
+Type: `Array`
+
+Set used languages (`['pl', 'en']`)
 
 #### domain.src
-Include the given files.
+Include the given files. You can use namespace and all features from angular-translate!
 
 ### Usage Examples
 Configure your task like this:
@@ -55,7 +61,8 @@ Configure your task like this:
 grunt.initConfig({
   generateTranslation: {
     options: {
-      path: 'app/translations/'
+      path: 'app/translations/',
+      langs: ['pl', 'en']
     },
     articles: {
       src: ['private/translations/articles/*.yml']
@@ -67,8 +74,7 @@ grunt.initConfig({
 })
 ```
 
-You have now two groups of files. First group is for articles, second for domains.  
-Each group has translations files. If you defined _pl_ at least once there will be file with polish translations created.  
+You have now 4 files.  
 Look at this pattern:  
 
 ```
@@ -114,7 +120,7 @@ grunt.initConfig({
 })
 ```
 ### Done!
-We have now two files:
+Now, we have now files:
 ```
 translations/welcome-pl.json
 translations/welcome-en.json
