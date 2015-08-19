@@ -1,0 +1,22 @@
+cars:
+  parts:
+    wheels:
+      pl: "Koła"
+      en: "Wheels"
+    breaks:
+      pl: "Hamulce"
+      en: "Breaks"
+  basic:
+    driving:
+      pl: "Prowadzić"
+      en: "Driving"
+    drive:
+      slow:
+        pl: "Jechać powoli"
+        en: "Drive slow"
+      fast:
+        pl: "Jechać szybko"
+        en: "Drive fast"
+bikes:
+  pl: "Rowery"
+  en: "Bikes"

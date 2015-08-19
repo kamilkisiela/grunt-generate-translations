@@ -2,11 +2,13 @@ module.exports = function(grunt) {
 
     var path = require('path');
     var url = require('url');
+    var Parser = require('../lib/Parser');
+    var _ = require('lodash');
     
     grunt.registerMultiTask('generateTranslations', "Find json files, compile and save as translations data", function() {
         var done = this.async();
         
-        var Parser = function() {
+        /*var Parser = function() {
             var container = {};
             this.load = function(cfg) {
                 for (var key in cfg) {
@@ -63,19 +65,19 @@ module.exports = function(grunt) {
                     grunt.log.debug('File created');
                 }
             };
-        };
+        };*/
 
         grunt.log.debug('Starting task "generateTranslations"...');
         var options = this.options({
-            path: "/"
+            path: "/",
+            langs: null
         });
         options.target = this.target;
         
         this.files.forEach(function(file) {
             var targetPath = grunt.config.process(options.path);
-            var parser = new Parser();
-            var writer = new Writer();
-            writer.dest = targetPath;
+            //var writer = new Writer();
+            //writer.dest = targetPath;
             
             grunt.log.debug('Handling output file "' + targetPath + options.target + '.json".');
             
@@ -97,12 +99,20 @@ module.exports = function(grunt) {
                 // Read and return the yaml parsed file's source.
                 return grunt.file.readYAML(filePath);
             });
+            
+            var config = {};
 
             for(var cfg in contentSources) {
-                parser.load(contentSources[cfg]);
+                var parser = new Parser();
+                config = _.merge(config, parser.parse(contentSources[cfg], options.langs));
             }
             
-            writer.save(options.target, parser.get());
+            //writer.save(options.target, config);
+            var prefix = targetPath + options.target + '-';
+            for(var key in options.langs) {
+                var lang = options.langs[key].toLowerCase();
+                grunt.file.write(prefix + lang + '.json', JSON.stringify(config[lang]));
+            }
             
             grunt.log.debug('Writing output...');
         });
