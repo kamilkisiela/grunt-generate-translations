@@ -111,7 +111,9 @@ module.exports = function(grunt) {
             var prefix = targetPath + options.target + '-';
             for(var key in options.langs) {
                 var lang = options.langs[key].toLowerCase();
-                grunt.file.write(prefix + lang + '.json', JSON.stringify(config[lang]));
+                var output = {};
+                output[options.target] = config[lang];
+                grunt.file.write(prefix + lang + '.json', JSON.stringify(output));
             }
             
             grunt.log.debug('Writing output...');
