@@ -27,8 +27,8 @@ exports.parser = function (test) {
     
     var parser = new Parser();
     var translations = parser.parse(grunt.file.readYAML('test/fixture/multi.yml'), ['pl', 'en']);
-    test.equal(JSON.stringify(translations.pl), grunt.file.read('test/expected/multi-pl.json'), "Output doesn't match expected output.");
-    test.equal(JSON.stringify(translations.en), grunt.file.read('test/expected/multi-en.json'), "Output doesn't match expected output.");
+    test.equal(JSON.stringify({multi: translations.pl}), grunt.file.read('test/expected/multi-pl.json'), "Output doesn't match expected output.");
+    test.equal(JSON.stringify({multi: translations.en}), grunt.file.read('test/expected/multi-en.json'), "Output doesn't match expected output.");
 
     test.done();
 };
