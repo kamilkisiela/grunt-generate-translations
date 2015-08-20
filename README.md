@@ -111,7 +111,8 @@ subtitle:
 grunt.initConfig({
   generateTranslation: {
     options: {
-      path: 'translations/'
+      path: 'translations/',
+      langs: ['pl', 'en']
     },
     welcome: {
       src: ['welcome.yml']
@@ -120,7 +121,7 @@ grunt.initConfig({
 })
 ```
 ### Done!
-Now, we have now files:
+Now, we have two files:
 ```
 translations/welcome-pl.json
 translations/welcome-en.json
