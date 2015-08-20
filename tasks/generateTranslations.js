@@ -7,65 +7,6 @@ module.exports = function(grunt) {
     
     grunt.registerMultiTask('generateTranslations', "Find json files, compile and save as translations data", function() {
         var done = this.async();
-        
-        /*var Parser = function() {
-            var container = {};
-            this.load = function(cfg) {
-                for (var key in cfg) {
-                    if (cfg.hasOwnProperty(key)) {
-                        this.add(key, cfg[key]);
-                    }
-                }
-            };
-            this.add = function(key, translations) {
-                container[key] = translations;
-            };
-            this.get = function() {
-                return container;
-            };
-        };
-        
-        var Writer = function() {
-            var self = this;
-            this.dest;
-            this.domain;
-            
-            var stringify = function(content) {
-                if(typeof content === 'object') {
-                    return JSON.stringify(content);
-                } else {
-                    throw new Error('Invalid content');
-                }
-            };
-            
-            var extract = function(content) {
-                var result = {};
-                for(var key in content) {
-                    for(var lang in content[key]) {
-                        if(!result[lang]) {
-                            result[lang] = {};
-                        }
-                        if(!result[lang][self.domain]) {
-                            result[lang][self.domain] = {};
-                        }
-                        result[lang][self.domain][key] = content[key][lang];
-                    }
-                }
-                return result;
-            };
-            
-            this.save = function(domain, content) {
-                this.domain = domain;
-                content = extract(content);
-                var filePath;
-                for(var lang in content) {
-                    filePath = this.dest + this.domain + '-' + lang + '.json';
-                    grunt.log.debug('Writing file "'+filePath + '".');
-                    grunt.file.write(filePath, stringify(content[lang]));
-                    grunt.log.debug('File created');
-                }
-            };
-        };*/
 
         grunt.log.debug('Starting task "generateTranslations"...');
         var options = this.options({

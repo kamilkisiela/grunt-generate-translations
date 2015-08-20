@@ -17,10 +17,10 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-generate-translations');
 ```
 
-## The "generateTranslation" task
+## The "generateTranslations" task
 
 ### Overview
-In your project's Gruntfile, add a section named `generateTranslation` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `generateTranslations` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
@@ -31,7 +31,7 @@ grunt.initConfig({
         langs: [...]
       }
     },
-    your_domain: {
+    your_target: {
       src: [...]
     },
   },
@@ -51,7 +51,7 @@ Type: `Array`
 
 Set used languages (`['pl', 'en']`)
 
-#### domain.src
+#### target.src
 Include the given files. You can use namespace and all features from angular-translate!
 
 ### Usage Examples
@@ -59,7 +59,7 @@ Configure your task like this:
 
 ```js
 grunt.initConfig({
-  generateTranslation: {
+  generateTranslations: {
     options: {
       path: 'app/translations/',
       langs: ['pl', 'en']
@@ -109,7 +109,7 @@ subtitle:
 ### Gruntfile.js
 ```js
 grunt.initConfig({
-  generateTranslation: {
+  generateTranslations: {
     options: {
       path: 'translations/',
       langs: ['pl', 'en']
